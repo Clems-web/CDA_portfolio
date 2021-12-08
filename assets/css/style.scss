@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#mainContainer {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #061623;
+}
+
+#logo {
+  width: 100%;
+  height: fit-content;
+  margin-top: 4rem;
+  font-size: 8rem;
+  font-style: italic;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+  color: #061623;
+  letter-spacing: 0.8rem;
+  text-shadow: 0 0 100px #28dee6;
+  -webkit-text-stroke: 2px #28dee6;
+  animation: textRolling 1.5s ease;
+}
+
+@keyframes textRolling {
+  from {
+    letter-spacing: -2.6rem;
+  }
+
+  to {
+    letter-spacing: 0.8rem;
+  }
+
+}
+
+#presentContainer {
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.cubeContainer {
+  width: 30%;
+  height: 100%;
+  perspective: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: animatedCube 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border: 1px solid #4e9f1e;
+  box-shadow: 0 0 13px 1px #38ff03;
+}
+
+.front {
+  transform: rotateX(0deg) translateZ(7.5rem);
+}
+
+.back {
+  transform: rotateX(-180deg) translateZ(7.5rem);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(7.5rem);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(7.5rem);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(7.5rem);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(7.5rem);
+}
+
+@keyframes animatedCube {
+
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+#presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  color: white;
+  font-size: 6rem;
+}
