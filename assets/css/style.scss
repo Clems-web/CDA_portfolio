@@ -5,12 +5,31 @@
   font-size: 62.5%;
   font-family: 'Teko', sans-serif;
   letter-spacing: 0.3rem;
+  color: #FFFFFFEC;
 }
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(13deg, rgba(77, 212, 224, 0.56) 14%, #4dd4e0 64%);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(13deg, #4c4e61 14%,#704f75 64%);
+}
+::-webkit-scrollbar-track{
+  background: #061623;
+}
+
 
 #mainContainer {
   width: 100%;
   height: fit-content;
-  min-height: 100vh;
+  min-height: 300vh;
   padding: 1rem;
   background-color: #061623;
 }
@@ -29,11 +48,12 @@
   letter-spacing: 0.8rem;
   text-shadow: 0 0 100px #28dee6;
   -webkit-text-stroke: 2px #28dee6;
-  animation: textRolling 1.5s ease;
+  animation: textRolling 1.5s ease, glowingTextNeon 4s linear infinite alternate;
 
   hr {
     border: 1px solid #28dee6;
     box-shadow: 0 0 8px #28dee6;
+    animation: glowingNeon 4s linear infinite alternate;
   }
 }
 
@@ -52,7 +72,26 @@
     width: 20%;
     margin-left: 40%;
   }
+}
 
+@keyframes glowingTextNeon {
+  from {
+    text-shadow: 0 0 50px #28dee6;
+
+  }
+  to {
+    text-shadow: 0 0 100px #28dee6;
+
+  }
+}
+
+@keyframes glowingNeon {
+  from {
+    box-shadow: 0 1px 50px #28dee6;
+  }
+  to {
+    box-shadow: 0 1px 100px #28dee6;
+  }
 }
 
 #presentContainer, #studyContainer {
@@ -67,7 +106,7 @@
   margin-top: 20vh;
 }
 
-/* Here is where apply style for ALL cube */
+/* Here is where I apply style for ALL cube */
 
 .cubeContainer {
   width: 30%;
@@ -85,17 +124,9 @@
     animation: animatedCube 10s infinite linear;
 
       .face {
-      position: absolute;
-      width: 15rem;
-      height: 15rem;
-      border: 1px solid #4e9f1e;
-      box-shadow: 0 0 13px 1px #38ff03;
-    }
-
-      /* Change color of differents cube */
-      .cube2 {
-      border: 1px solid rgba(255, 0, 255, 0.75);
-      box-shadow: 0 0 13px 1px magenta;
+        position: absolute;
+        width: 15rem;
+        height: 15rem;
     }
 
       /* Cubes's build */
@@ -149,9 +180,10 @@
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 30px;
   box-shadow: inset 6px 6px 10px rgba(139, 176, 178, 0.46), inset -6px -6px 10px rgba(139, 176, 178, 0.17);
+  perspective: 50rem;
 
   p {
-    width: 100%;
+    width: 60%;
     height: fit-content;
     text-align: center;
     padding: 1rem;
@@ -160,7 +192,9 @@
     align-items: center;
     color: #ffffff;
     font-size: 4rem;
-    font-family: 'Teko', sans-serif;
+    transform-style: preserve-3d;
+    transform: translateZ(10rem);
+    text-shadow: 12px 12px 10px black;
   }
 }
 
@@ -168,7 +202,6 @@
   width: 60%;
   height: 100%;
   padding: 2rem;
-  color: #FFFFFFEC;
 
   h2 {
     font-size: 5rem;
