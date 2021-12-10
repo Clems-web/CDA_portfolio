@@ -14,14 +14,17 @@
   width: 0.7rem;
   height: 0.7rem;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(13deg, rgba(77, 212, 224, 0.56) 14%, #4dd4e0 64%);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover{
-  background: linear-gradient(13deg, #4c4e61 14%,#704f75 64%);
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #4c4e61 14%, #704f75 64%);
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
   background: #061623;
 }
 
@@ -94,7 +97,7 @@
   }
 }
 
-#presentContainer, #studyContainer {
+#presentContainer, #studyContainer, #languageContainer {
   width: 100%;
   height: 50rem;
   display: flex;
@@ -116,41 +119,41 @@
   justify-content: center;
   align-items: center;
 
-    .cube {
+  .cube {
     width: 15rem;
     height: 15rem;
     position: relative;
     transform-style: preserve-3d;
     animation: animatedCube 10s infinite linear;
 
-      .face {
-        position: absolute;
-        width: 15rem;
-        height: 15rem;
+    .face {
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
     }
 
-      /* Cubes's build */
-      .front {
+    /* Cubes's build */
+    .front {
       transform: rotateX(0deg) translateZ(7.5rem);
     }
 
-      .back {
+    .back {
       transform: rotateX(-180deg) translateZ(7.5rem);
     }
 
-      .left {
+    .left {
       transform: rotateY(-90deg) translateZ(7.5rem);
     }
 
-      .right {
+    .right {
       transform: rotateY(90deg) translateZ(7.5rem);
     }
 
-      .top {
+    .top {
       transform: rotateX(90deg) translateZ(7.5rem);
     }
 
-      .bottom {
+    .bottom {
       transform: rotateX(-90deg) translateZ(7.5rem);
     }
 
@@ -216,5 +219,22 @@
       color: #FFFFFFEC;
     }
   }
+}
+
+#languagePresentation {
+  width: 60%;
+  height: 100%;
+  padding: 2rem;
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    color: #FFFFFFEC;
+  }
+
 }
 
